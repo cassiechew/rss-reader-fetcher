@@ -10,5 +10,5 @@ This is the rss feed portion of the backend. This acts as a single service to pu
 - TypeORM
 - Type-Graphql
 
-## Functionality
-For a full list of functionality please checkout the [rss-reader](https://github.com/ryanchew3/rss-reader) repo.
+## Features
+For a full list of features please checkout the [rss-reader](https://github.com/ryanchew3/rss-reader) repo.
