@@ -16,7 +16,18 @@ require("dotenv").config({ path: `${__dirname}/../.env.local` });
 const PORT = process.env.PORT || 4001;
 
 async function startApolloServer() {
-  await createConnection("default");
+  await createConnection({
+    name: "default",
+    type: "postgres",
+    url: process.env.DB_URL,
+    port: 5432,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB,
+    synchronize: true,
+    logging: true,
+    entities: ["./src/Entity/RssFeed.ts"],
+  });
   const schema = await buildSchema({
     resolvers: [RssResolver],
   });
